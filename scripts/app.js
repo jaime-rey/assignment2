@@ -18,7 +18,7 @@
     ];
     service.boughtList = [];
 
-    service.buy = function (index) {
+    service.buy = (index) => {
       console.log("Buying " + service.toBuyList[index].name);
       service.boughtList.push(service.toBuyList[index]);
       service.toBuyList.splice(index, 1);
