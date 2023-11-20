@@ -47,7 +47,7 @@
             </button>
           </li>
         </ul>
-        <div class="emptyMessage" data-ng-if="toBuy.length == 0">
+        <div class="emptyMessage" data-ng-if="toBuy.toBuyList.length == 0">
           Everything is bought!
         </div>
       </div>
@@ -60,7 +60,7 @@
             Bougth {{ item.quantity }} {{item.name}}
           </li>
         </ul>
-        <div class="emptyMessage" data-ng-if="bought.length == 0">
+        <div class="emptyMessage" data-ng-if="bought.boughtList.length == 0">
           Nothing bought yet.
         </div>
       </div>
