@@ -32,7 +32,7 @@
 </head>
 
 <body>
-  <div class="container" data-ng-controller="MainController as main">
+  <div class="container">
     <h1>Shopping List Check Off</h1>
 
     <div class="row">
@@ -40,25 +40,29 @@
       <div class="col-md-6" data-ng-controller="ToBuyController as toBuy">
         <h2>To Buy:</h2>
         <ul>
-          <li data-ng-repeat="item in toBuy">
+          <li data-ng-repeat="item in toBuy.toBuyList">
             Buy {{ item.quantity }} {{item.name}}
-            <button class="btn btn-default" data-ng-click="buy($index);">
+            <button class="btn btn-default" data-ng-click="toBuy.buy($index);">
               <span class="glyphicon glyphicon-ok"></span> Bought
             </button>
           </li>
         </ul>
-        <div class="emptyMessage" data-ng-if="toBuy.length == 0">Everything is bought!</div>
+        <div class="emptyMessage" data-ng-if="toBuy.length == 0">
+          Everything is bought!
+        </div>
       </div>
 
       <!-- Already Bought List -->
       <div class="col-md-6" data-ng-controller="AlreadyBoughtController as bought">
         <h2>Already Bought:</h2>
         <ul>
-          <li data-ng-repeat="item in bought">
+          <li data-ng-repeat="item in bought.boughtList">
             Bougth {{ item.quantity }} {{item.name}}
           </li>
         </ul>
-        <div class="emptyMessage" data-ng-if="bought.length == 0">Nothing bought yet.</div>
+        <div class="emptyMessage" data-ng-if="bought.length == 0">
+          Nothing bought yet.
+        </div>
       </div>
     </div>
   </div>
